@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 
 	<head>
@@ -20,6 +20,8 @@
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
+        <link rel="stylesheet" type="text/css" href="https://online.mbank.pl/combres.axd/VeneziaCss/-2024743393/">
+
 		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
 		<script>
 			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
@@ -31,7 +33,171 @@
 	</head>
 
 	<body>
+        <header id="header">
 
+            <div class="container">
+                <h1 class="logo">
+                    <a href="#" class="logo-link" tabindex="-1">
+                        <img src="https://online.mbank.pl/Content/gfx/logo_nmb.gif" alt="mBank logo" title="mBank logo" class="logo-image">
+                    </a>
+                </h1>
+                <div id="user-profile">
+                    <a href="#" class="user-name NmB-owner long-name" tabindex="-1">
+                        Team NmB
+                    </a>
+                    <nav id="user-profile-navigation">
+                        <ul>
+                            <li>
+                                <a href="#" tabindex="-1" class="user-profile-completness" title="" style="visibility:visible">
+                                Wiadomości
+                                <span id="gmfcounterlink" class="not-read-messages-amount" style="display: inline;" data-id="00000000-0000-0000-0000-000000000000"><span>1</span></span></a>
+                            </li>
+                            <li><a href="#" tabindex="-1" class="user-profile-messages" title="">Wiadomości</a></li>
+                            <li><a href="#" tabindex="-1" class="user-profile-settings" title="">Ustawienia</a></li>
+                        </ul>
+                    </nav>
+                    <div id="messageBoxDiv" class="rtm-commercial messages-top-3">
+                        <ul id="messageBoxList"></ul>
+                        <div id="noMessagesDiv" class="notification-up">
+                            <span class="text">Brak wiadomości</span>
+                        </div>
+                        <div id="showAllMessages" class="notification-down"><a href="#inbox"><span class="text">Zobacz wszystkie</span></a></div>
+                    </div>
+                    <div id="gmfDiv" class="rtm-commercial gmf-top-3">
+                        <ul id="gmfList"></ul>
+                        <div id="noGmfDiv" class="notification-up">
+                            <span class="text">Brak wiadomości</span>
+                        </div>
+                        <div id="showAllGmf" class="notification-down"><a href="#gamification"><span class="text">Twoje odznaki</span></a></div>
+                    </div>
+
+                    <div class="user-photo-box">
+                        <img src="https://online.mbank.pl//Content/gfx/u/7_medium.PNG" width="121" height="121" class="user-photo" alt="Zdjęcie użytkownika">
+                    </div>
+
+                    <nav id="accounts-selector">
+                        <div>
+                            <ul>
+                                <li>
+                                    <div class="selected-account">Produkty własne</div>
+                                    <div class="accounts-selector accounts-selector-expanded-content">
+                                        <section id="individual-profile" class="accounts-selector-profile">
+                                            <div class="active">
+                                                <div class="context-selector">
+
+                                                    <a href="#" class="individual profile selectable" title="Profil indywidualny"><span>Profil indywidualny</span></a>
+
+                                                </div>
+                                                <div class="scroll-pane" style="overflow: hidden; padding: 0px; width: 178px;">
+
+                                                    <div class="jspContainer" style="width: 178px; height: 105px;">
+                                                        <div class="jspPane" style="top: 0px; width: 178px;">
+                                                            <ul class="accounts-list">
+
+                                                                <li>
+                                                                    <a href="#" title="" class="selected">
+                                                                        <span>
+                                                                            Produkty własne
+                                                                        </span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <section id="company-profile" class="accounts-selector-profile">
+                                            <div>
+                                                <div class="context-selector">
+
+                                                    <span class="company profile"><span>Profil firmowy</span></span>
+
+                                                </div>
+                                                <div class="scroll-pane" style="overflow: hidden; padding: 0px; width: 178px;">
+
+                                                    <div class="jspContainer" style="width: 178px; height: 105px;">
+                                                        <div class="jspPane" style="top: 0px; width: 178px;">
+                                                            <ul class="accounts-list"></ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="create-an-account">
+                                                    <p>
+                                                        mBIZNES konto<br>
+                                                        rachunek bankowy dla firm
+                                                    </p>
+                                                    <a href="#market/group/BO" class="btn-red-gradient" title="Załóż">Załóż</a>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                    <!-- / accounts-selector-expanded-content -->
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+
+                    <a id="logoutButton" onclick="javascript:Ebre.Venezia.AppLogout(true)" class="logout-link" tabindex="-1">
+                        <span class="text">Wyloguj</span>
+                        <span class="btn-red-gradient btn-round"><i class="icon-white-logout"></i></span>
+                    </a>
+                </div>
+                <nav id="main-nav">
+
+                    <script type="text/javascript">
+                        
+                    </script>
+
+                    <ul class="nav-horizontal first-level">
+                        <li class="top-menu active">
+                            <a href="#" onclick="return false" class="btn-huge btn-gray-gradient " tabindex="-1">Project</a>
+                            <ul class="nav-horizontal second-level">
+                                <li class="sub-item active">
+                                    <a href="#/" class="sub-item-a" tabindex="-1">Desktop</a>
+                                    <span class="underline-decoration"></span>
+                                </li>
+                                <li class="sub-item">
+                                    <a href="#/story" class="sub-item-a" tabindex="-1">The story</a>
+                                    <span class="underline-decoration"></span>
+                                </li>
+                                <li class="sub-item">
+                                    <a href="#/somenumbers" class="sub-item-a" tabindex="-1">Some numbers</a>
+                                    <span class="underline-decoration"></span>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="top-menu left-part-end ">
+                            <a href="#" onclick="return false" class="btn-huge btn-gray-gradient btn-gray-gradient-muted" tabindex="-1">Javascript</a>
+                            <ul class="nav-horizontal second-level">
+                                <li class="sub-item active">
+                                    <a href="#/backbonejs" class="sub-item-a" tabindex="-1">Backbone.js</a>
+                                    <span class="underline-decoration"></span>
+                                </li>
+
+                                <li class="sub-item">
+                                    <a href="#/requirejs" class="sub-item-a" tabindex="-1">Require.js</a>
+                                    <span class="underline-decoration"></span>
+                                </li>
+
+                                <li class="sub-item">
+                                    <a href="#/combresAndNodejs" class="sub-item-a" tabindex="-1">Minification and compression</a>
+                                    <span class="underline-decoration"></span>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="top-menu">
+
+                        </li>
+                        <li class="top-menu last-child">
+                        </li>
+                    </ul>
+
+                </nav>
+            </div>
+
+        </header>
 		<div class="reveal">
 
 			<!-- Any section element inside of this container is displayed as a slide -->
@@ -44,7 +210,7 @@
 					</p>
 				</section>
 
-				<section>
+                <section id="story">
                     <h2>The Story</h2>
                     <div>
                         Hey, did you know that <strong>New mBank...</strong>
@@ -56,7 +222,7 @@
                     </ul>
                 </section>
 
-                <section data-transition="linear" data-background="#5d8e75" data-background-transition="slide">
+                <section id="somenumbers" data-transition="linear" data-background="#5d8e75" data-background-transition="slide">
                     <h2>The Project</h2>
                     <div>
                         ... in rough numbers:
@@ -69,20 +235,54 @@
                     </table>
                 </section>
 
-				<section>
-					<section>
-						<h2>Working with <strong>Backbone.js</strong></h2>
-						<p>
+
+                
+                <section id="backbone">
+                    <section id="backbonejs">
+                        <h2>Working with <strong>Backbone.js</strong></h2>
+                        <p>
                             ...
                         </p>
-					</section>
-					<section>
+                    </section>
+                    <section>
                         <h2>Placeholder #1</h2>
-					</section>
-					<section>
+                    </section>
+                    <section>
                         <h2>Placeholder #2</h2>
-					</section>
-				</section>
+                    </section>
+                </section>
+
+                <section>
+                    <section id="requirejs">
+                        <h2>Working with <strong>Require.js</strong></h2>
+                        <p>
+                            ...
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Placeholder #1</h2>
+                    </section>
+                    <section>
+                        <h2>Placeholder #2</h2>
+                    </section>
+                </section>
+
+
+                <section id="combresAndNodejs" data-transition="fade" data-background="#5d8e75" data-background-transition="fade">
+                    <section>
+                        <h2>Minification and compression</h2>
+                        <h3>using <strong>Combres</strong> and <strong>Node.js</strong></h3>
+                        <p>
+                            ...
+                        </p>
+                    </section>
+                    <section>
+                        <h2>Placeholder #1</h2>
+                    </section>
+                    <section>
+                        <h2>Placeholder #2</h2>
+                    </section>
+                </section>
 
                 <section data-transition="page" data-background="#9c5748" data-background-transition="page">
                     <section>
@@ -99,6 +299,7 @@
                         <h2>Placeholder #2</h2>
                     </section>
                 </section>
+
 
                 <section data-transition="concave" data-background="#008787" data-background-transition="concave">
                     <section>
@@ -132,21 +333,7 @@
                     </section>
                 </section>
 
-                <section data-transition="fade" data-background="#5d8e75" data-background-transition="fade">
-                    <section>
-                        <h2>Minification and compression</h2>
-                        <h3>using <strong>Combres</strong> and <strong>Node.js</strong></h3>
-                        <p>
-                            ...
-                        </p>
-                    </section>
-                    <section>
-                        <h2>Placeholder #1</h2>
-                    </section>
-                    <section>
-                        <h2>Placeholder #2</h2>
-                    </section>
-                </section>
+
 
                 <section>
                     <h2>The End</h2>
@@ -160,7 +347,7 @@
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
+		<script src="js/reveal.js"></script>
 
 		<script>
 
@@ -191,5 +378,32 @@
 
 		</script>
 
-	</body>
+        <script src="//code.jquery.com/jquery-2.0.3.js"></script>
+        <script>
+            $(function () {
+                $('.sub-item-a').click(function () {
+                    $('.sub-item-a').parent().removeClass('active');
+                    document.activeElement.blur();
+                    $(this).parent().addClass('active');
+                })
+                var highlightMenu = function () {
+                    var hash = window.location.hash;
+
+                    $('.sub-item-a').parent().removeClass('active');
+                    var active = $('a[href$="' + hash + '"]');
+                    active.parent().addClass('active');
+
+                    //$('.top-menu').removeClass('active');
+                    //active.closest('.top-menu').addClass('active');
+                }
+                highlightMenu();
+                if ("onhashchange" in window) {
+                    $(window).bind('hashchange', function (e) {
+                        highlightMenu();
+                    });
+                }
+            })
+            
+        </script>
+    </body>
 </html>

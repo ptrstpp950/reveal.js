@@ -2020,8 +2020,11 @@ var Reveal = (function(){
 				}
 				// Otherwise use the /h/v index
 				else {
-					if( indexh > 0 || indexv > 0 ) url += indexh;
-					if( indexv > 0 ) url += '/' + indexv;
+                    
+				    if (indexh > 0 || indexv > 0)
+				        url += indexh;
+				    if (indexv > 0)
+				        url += '/' + indexv;
 				}
 
 				window.location.hash = url;
