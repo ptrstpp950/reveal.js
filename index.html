@@ -241,16 +241,50 @@
                     <section>
                         <h2>Minification and compression</h2>
                         <h3>using <strong>Combres</strong> and <strong>Node.js</strong></h3>
-                        <p>
-                            ...
-                        </p>
                     </section>
                     <section>
-                        <h2>Placeholder #1</h2>
+                        <h2>Combres features highlights:</h2>
+						<ul>
+							<li>JS/CSS 
+								<a href="http://developer.yahoo.com/performance/rules.html#num_http">combination(bundling)</a>, 
+								<a href="http://developer.yahoo.com/performance/rules.html#minify">minification</a>, 
+								<a href="http://developer.yahoo.com/performance/rules.html#gzip">compression</a> 
+								and caching
+							</li>
+							<li>Integrated with ASP.NET WebForm 3.5/4.0/4.5 and ASP.NET MVC 2/3/4</li>
+							<li>Auto-versioning of JS/CSS bundles</li>
+						</ul>
                     </section>
                     <section>
-                        <h2>Placeholder #2</h2>
+                        <h2>Why it is required?</h2>
+						<ul>
+							<li>Bundling: Client request only few files instead of many -> it is faster</li>
+							<li>Minification example: jquery-1.10.0.js = <b>276KB</b> vs. jquery-1.10.0.min.js = <b>94KB</b></li>
+							<li>Caching using ETag, Expires/Cache-Control and unique name for bundle</li>
+							<li>Small example :)</li>
+						</ul>
                     </section>
+					<section>
+						<h2>Does it solve all problems?</h2>
+						<ul class="second-level"  data-transition="fade">
+							<li>Every release(especially first day after) everybody downloads everything</li>
+							<li>It doesn't work with require.js</li>
+							<li>It doesn't allow to add new resources from code</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Simple architectonic diagram of Venezia</h2> 
+						<h2>TODO</h2>
+					</section>
+					<section>
+						<h2>Second approach for modules</h2>
+						<ul class="second-level"  data-transition="fade">
+							<li>Every release(especially first day after) everybody downloads everything</li>
+							<li>It doesn't work with require.js</li>
+							<li>It doesn't allow to add new resources from code</li>
+							<li>Modules include JS/CSS as embedded resources</li>
+						</ul>
+					</section>
                 </section>
 
                 <section title="ripple"  data-transition="page" data-background="https://online.mbank.pl/Content/gfx/bg/bg_content.png" data-background-size="40px" data-background-repeat="repeat" data-background-transition="page">
