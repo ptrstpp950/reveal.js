@@ -47,13 +47,12 @@
                     </a>
                     <nav id="user-profile-navigation">
                         <ul>
-                            <li>
-                                <a href="#" onclick="return false;" tabindex="-1" class="user-profile-completness" title="" style="visibility:visible">
-                                Wiadomości
-                                <span id="gmfcounterlink" class="not-read-messages-amount" style="display: inline;"><span>1</span></span></a>
-                            </li>
-                            <li><a href="#" onclick="return false;" class="user-profile-messages" title="">Wiadomości</a></li>
-                            <li><a href="#" onclick="return false;" tabindex="-1" class="user-profile-settings" title="">Ustawienia</a></li>
+						<li>
+							<a href="#" onclick="return false;" class="user-profile-completness" tabindex="-1" style="visibility: visible">Wiadomości
+							<span id="gmfcounterlink" class="not-read-messages-amount" style="display: inline;"><span>1</span></span></a>
+						</li>
+						<li><a href="#" onclick="return false;" class="user-profile-messages" tabindex="-1">Wiadomości</a></li>
+						<li><a href="#" onclick="return false;" class="user-profile-settings" tabindex="-1">Ustawienia</a></li>
                         </ul>
                     </nav>
                     <div id="messageBoxDiv" class="rtm-commercial messages-top-3">
@@ -170,260 +169,27 @@
 		<div class="reveal">
 
 			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section title="begin" data-background="css/Content/gfx/bg/bg_content.png" data-background-size="40px" data-background-repeat="repeat">
-					<h1>about.mBank</h1>
-					<h3>the WAR stories</h3>
-					<p>
-						<small>Created by <strong>mBank Team</strong></small>
-					</p>
-				</section>
+		<div class="slides">
+			<section title="begin" data-markdown="/modules/begin/external.html" data-background="css/Content/gfx/bg/bg_content.png" data-background-size="40px" data-background-repeat="repeat"></section>
 
-                <section title="story" data-background="css/Content/gfx/bg/bg_content.png" data-background-size="40px" data-background-repeat="repeat">
-                    <h2>The Story</h2>
-                    <div>
-                        Hey, did you know that <strong>New mBank...</strong>
-                    </div>
-                    <ul>
-                        <li class="fragment">is built on .NET stack</li>
-                        <li class="fragment">utilizes ASP.NET MVC 3</li>
-                        <li class="fragment">is an SPA that uses Backbone.js</li>
-                    </ul>
-                </section>
+			<section title="story" data-markdown="/modules/story/external.html" data-background="css/Content/gfx/bg/bg_content.png" data-background-size="40px" data-background-repeat="repeat"></section>
 
-                <section title="somenumbers" data-transition="linear" data-background="css/Content/gfx/bg/bg_content.png" data-background-size="40px" data-background-repeat="repeat">
-                    <section>
-                        <h2>The Project</h2>
-                        <div>
-                            ... in rough numbers:
-                        </div>
-                        <div style="width: 100%; display: table;">
-                            <div style="display: table-row">
-                                <div style="display: table-cell; vertical-align:top;">
-                                    First iteration was:
-                                    <table>
-                                        <tr class="fragment"><td><strong>8</strong></td><td>teams</td></tr>
-                                        <tr class="fragment"><td><strong>10</strong></td><td>months</td></tr>
-                                        <tr class="fragment"><td><strong>100+</strong></td><td>UIUX developers</td></tr>
-                                        <tr class="fragment"><td><strong>12165</strong></td><td>revisions in VCS</td></tr>
-                                    </table>
-                                </div>
-                                <div style="display: table-cell; height:400px;padding-top:25px;">                                
-                                    <iframe width="480" height="360" src="http://www.youtube.com/embed/7JHTYdOIxqw" frameborder="0" allowfullscreen></iframe>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </section>
+			<section title="somenumbers" data-markdown="/modules/somenumbers/external.html" data-transition="linear" data-background="css/Content/gfx/bg/bg_content.png" data-background-size="40px" data-background-repeat="repeat"></section>
 
-								<section title="backbonejs" data-markdown="/modules/backbone/external.html" data-background="css/Content/gfx/bg/bg_content.png" data-background-size="40px" data-background-repeat="repeat"></section>
+			<section title="backbonejs" data-markdown="/modules/backbone/external.html" data-background="css/Content/gfx/bg/bg_content.png" data-background-size="40px" data-background-repeat="repeat"></section>
 
-                <section title="requirejs" data-background="css/Content/gfx/bg/bg_content.png" data-background-size="40px" data-background-repeat="repeat">
-                    <section>
-                        <h2>Working with <strong>Require.js</strong></h2>
-                        <p>
-                            ...
-                        </p>
-                    </section>
-                    <section>
-                        <h2>Placeholder #1</h2>
-                    </section>
-                    <section>
-                        <h2>Placeholder #2</h2>
-                    </section>
-                </section>
+			<section title="requirejs" data-markdown="/modules/requirejs/external.html" data-background="css/Content/gfx/bg/bg_content.png" data-background-size="40px" data-background-repeat="repeat"></section>
 
+			<section title="combresAndNodejs" data-markdown="/modules/combresAndNodejs/external.html" data-transition="fade" data-background-transition="fade" data-background="css/Content/gfx/bg/bg_content.png" data-background-size="40px" data-background-repeat="repeat"></section>
 
-                <section title="combresAndNodejs" data-transition="fade" data-background-transition="fade" data-background="css/Content/gfx/bg/bg_content.png" data-background-size="40px" data-background-repeat="repeat">
-                    <section>
-                        <h2>Minification and compression</h2>
-                        <h3>using <strong>Combres</strong> and <strong>Node.js</strong></h3>
-                    </section>
-                    <section>
-                        <h3>Combres features highlights:</h3>
-						<ul>
-							<li class="fragment">JS/CSS 
-								<a href="http://developer.yahoo.com/performance/rules.html#num_http">combination(bundling)</a>, 
-								<a href="http://developer.yahoo.com/performance/rules.html#minify">minification</a>, 
-								<a href="http://developer.yahoo.com/performance/rules.html#gzip">compression</a> 
-								and caching
-							</li>
-							<li class="fragment">Integrated with ASP.NET WebForm 3.5/4.0/4.5 and ASP.NET MVC 2/3/4</li>
-							<li class="fragment">Auto-versioning of JS/CSS bundles</li>
-						</ul>
-                    </section>
-                    <section>
-                        <h3>Why it is required?</h3>
-						<ul>
-							<li class="fragment">Bundling: Client request only few files instead of many -> it is faster</li>
-							<li class="fragment">Minification example: jquery-1.10.0.js = <b>276KB</b> vs. jquery-1.10.0.min.js = <b>94KB</b></li>
-							<li class="fragment">Caching using ETag, Expires/Cache-Control and unique name for bundle</li>
-							<li class="fragment">Small example :)</li>
-						</ul>
-                    </section>
-                    <section>
-                        <h2>Why Combres?</h2>
-						<ul>
-							<li>It work with old MVC :)</li>
-							<li>You can apply changes without recompiling (+/-)</li>
-                            <li>Easy turn on/off debug mode. Even on production enviroment</li>
-							<li>Hashes are content based generated</li>
-                            <li>Allow custom minifiers including YUI and AjaxMin</li>
-                            <li>Proven solution with many thousands downloads</li>
-						</ul>
-                    </section>
-					<section>
-						<h3>Does it solve all problems?</h3>
-						<ul>
-							<li class="fragment">Every release(especially first day after) everybody downloads everything</li>
-							<li class="fragment">It doesn't work with require.js</li>
-							<li class="fragment">It doesn't allow to add new resources from code</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Simple diagram</h2> 
-                        <div>
-                            <img style="border:0px; height:90%" src="img/nmb-diagram.png"/>
-                        </div>
-					</section>
-					<section>
-						<h2>Problems with modules</h2>
-						<ul>
-							<li>Combres doesn't work with require.js</li>
-							<li>Combres doesn't allow to add new resources from code</li>
-							<li>Modules include JS/CSS as embedded resources - because one dll deployment is much more easier</li>
-                            <li>Every release(especially first day after) everybody downloads everything</li>
-						</ul>
-					</section>
-					<section>
-						<h3>require.js optimizer</h3>
-						<div>It is simple one javascript file: <b>r.js</b>. To run it we need <b>node.js</b>. 
-							The basic run command is very simple.
-						</div>
-						<code>node r.js -o baseUrl=. name=main out=main-built.js</code>
-						<div class="fragment"><b>In our case it wasn't enough</b></div>
-					</section>
-					<section>
-						<h3>r.js problems</h3>
-						<div>
-							Normal require.js files looks like following:<br/>
-							<code>require(['a', 'b']);</code>
-						</div>
-						<div class="fragment">In our case it was like this:<br/>
-							<code>require([Ebre.ModulePath+'a', Ebre.ModulePath+'b']);</code>
-						</div>
-						<div class="fragment">
-							The variable <code>Ebre.ModulePath</code> was need because in the begging of the project UI was outsourced.
-						</div>
-					</section>
-					<section>
-						<h3>Grunt to the rescue</h3>
-						<div>
-							<img width="10%" height="10%" src="http://gruntjs.com/img/grunt-logo.png"/>
-                            <br/>The JavaScript Task Runner
-						</div>
-					</section>
-					<section>
-						<h3>Grunt "algorithm"</h3>
-						<ol>
-							<li >Copy all require.js files to temp dir</li>
-							<li>Replace <code>Ebre.DesktopModulePath+'a'</code> with <code>/MyDesktop/Resources/par_axd/MyDesktop?file=Scripts/Desktop/a</code></li>
-							<li>Run r.js</li>
-							<li>Copy result</li>
-							<li>Delete temp dir</li>
-						</ol>
-					</section>
-					<section>
-						<h3>Grunt code</h3>
-						<h2>TODO</h2>
-					</section>
-					<section>
-						<h3>Integration with MSBuild - prebuild tasks</h3>
-						<ul>
-							<li class="fragment">Run grunt - the easiest way was to run it from PowerShell</li>
-							<li class="fragment">Calculate hash of JS/CSS for user caching and generate C# code with it</li>
-							<li class="fragment">Include built file as embedded resource in final dll</li>
-						</ul>
-					</section>
-					<section>
-						<h3>C# part</h3>
-						<h2>TODO</h2>
-					</section>
-					<section>
-						<h3>Summary</h3>
-						<ul>
-							<li class="fragment">Bundling, minification and compression is need modern apps</li>
-							<li class="fragment">
-								Don't be afraid for using <b>strange</b> technologies 
-								- they can save our time and are easy include in MSBuild
-							</li>
-							<li class="fragment">
-								Did we succeed? Let's check: <a href="https://online.mbank.pl/pl/Login">https://online.mbank.pl/pl/Login</a>
-							</li>
-							
-						</ul>
-					</section>
-                </section>
+			<section title="ripple" data-markdown="/modules/ripple/external.html" data-transition="page" data-background="css/Content/gfx/bg/bg_content.png" data-background-size="40px" data-background-repeat="repeat" data-background-transition="page"></section>
 
-                <section title="ripple"  data-transition="page" data-background="css/Content/gfx/bg/bg_content.png" data-background-size="40px" data-background-repeat="repeat" data-background-transition="page">
-                    <section>
-                        <h2><strong>Ripple</strong></h2>
-                        <h3>The size does matter</h3>
-                        <p>
-                            ...
-                        </p>
-                    </section>
-                    <section>
-                        <h2>Placeholder #1</h2>
-                    </section>
-                    <section>
-                        <h2>Placeholder #2</h2>
-                    </section>
-                </section>
+			<section title="wcf" data-markdown="/modules/wcf/external.html" data-transition="concave" data-background="css/Content/gfx/bg/bg_content.png" data-background-size="40px" data-background-repeat="repeat" data-background-transition="concave"></section>
 
+			<section title="profiling" data-markdown="/modules/profiling/external.html" data-background="css/Content/gfx/bg/bg_content.png" data-background-size="40px" data-background-repeat="repeat" data-transition="zoom" data-background-transition="zoom"></section>
 
-                <section title="wcf" data-transition="concave" data-background="css/Content/gfx/bg/bg_content.png" data-background-size="40px" data-background-repeat="repeat" data-background-transition="concave">
-                    <section>
-                        <h2><strong>WCF</strong> pooling</h2>
-                        <h3>in multi-tier architecture</h3>
-                        <p>
-                            ...
-                        </p>
-                    </section>
-                    <section>
-                        <h2>Placeholder #1</h2>
-                    </section>
-                    <section>
-                        <h2>Placeholder #2</h2>
-                    </section>
-                </section>
-
-                <section title="profiling" data-background="css/Content/gfx/bg/bg_content.png" data-background-size="40px" data-background-repeat="repeat" data-transition="zoom" data-background-transition="zoom">
-                    <section>
-                        <h2>Spike profiling</h2>
-                        <h3>with <strong>MiniProfiler</strong></h3>
-                        <p>
-                            ...
-                        </p>
-                    </section>
-                    <section>
-                        <h2>Placeholder #1</h2>
-                    </section>
-                    <section>
-                        <h2>Placeholder #2</h2>
-                    </section>
-                </section>
-
-
-
-                <section title="end" data-background="css/Content/gfx/bg/bg_content.png" data-background-size="40px" data-background-repeat="repeat">
-                    <h2>The End</h2>
-                    <div>
-                        Questions?
-                    </div>
-                </section>
-
-            </div>
+			<section title="end" data-markdown="/modules/end/external.html" data-background="css/Content/gfx/bg/bg_content.png" data-background-size="40px" data-background-repeat="repeat"></section>
+		</div>
 
 		</div>
 
@@ -461,7 +227,6 @@
 
         <script src="js/jquery-2.0.3.min.js"></script>
         <script>
-            $(function () {
 		$(function () {
 			//click handler on small sub links
 			$('.sub-item-a').click(function (e, forced) {
