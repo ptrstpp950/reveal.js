@@ -1,0 +1,128 @@
+ <section>
+    <h2>Minification and compression</h2>
+    <h3>using <strong>Combres</strong> and <strong>Node.js</strong></h3>
+</section>
+<section>
+    <h3>Combres features highlights:</h3>
+    <ul>
+    	<li class="fragment">JS/CSS 
+    		<a href="http://developer.yahoo.com/performance/rules.html#num_http">combination(bundling)</a>, 
+    		<a href="http://developer.yahoo.com/performance/rules.html#minify">minification</a>, 
+    		<a href="http://developer.yahoo.com/performance/rules.html#gzip">compression</a> 
+    		and caching
+    	</li>
+    	<li class="fragment">Integrated with ASP.NET WebForm 3.5/4.0/4.5 and ASP.NET MVC 2/3/4</li>
+    	<li class="fragment">Auto-versioning of JS/CSS bundles</li>
+    </ul>
+</section>
+<section>
+    <h3>Why it is required?</h3>
+    <ul>
+    	<li class="fragment">Bundling: Client request only few files instead of many -> it is faster</li>
+    	<li class="fragment">Minification example: jquery-1.10.0.js = <b>276KB</b> vs. jquery-1.10.0.min.js = <b>94KB</b></li>
+    	<li class="fragment">Caching using ETag, Expires/Cache-Control and unique name for bundle</li>
+    	<li class="fragment">Small example :)</li>
+    </ul>
+</section>
+<section>
+    <h2>Why Combres?</h2>
+    <ul>
+    	<li>It work with old MVC :)</li>
+    	<li>You can apply changes without recompiling (+/-)</li>
+        <li>Easy turn on/off debug mode. Even on production enviroment</li>
+    	<li>Hashes are content based generated</li>
+        <li>Allow custom minifiers including YUI and AjaxMin</li>
+        <li>Proven solution with many thousands downloads</li>
+    </ul>
+</section>
+<section>
+    <h3>Does it solve all problems?</h3>
+    <ul>
+    	<li class="fragment">Every release(especially first day after) everybody downloads everything</li>
+    	<li class="fragment">It doesn't work with require.js</li>
+    	<li class="fragment">It doesn't allow to add new resources from code</li>
+    </ul>
+</section>
+<section>
+    <h2>Simple diagram</h2> 
+    <div>
+        <img style="border:0px; height:90%" src="img/nmb-diagram.png"/>
+    </div>
+</section>
+<section>
+    <h2>Problems with modules</h2>
+    <ul>
+    	<li>Combres doesn't work with require.js</li>
+    	<li>Combres doesn't allow to add new resources from code</li>
+    	<li>Modules include JS/CSS as embedded resources - because one dll deployment is much more easier</li>
+        <li>Every release(especially first day after) everybody downloads everything</li>
+    </ul>
+</section>
+<section>
+    <h3>require.js optimizer</h3>
+    <div>It is simple one javascript file: <b>r.js</b>. To run it we need <b>node.js</b>. 
+    	The basic run command is very simple.
+    </div>
+    <code>node r.js -o baseUrl=. name=main out=main-built.js</code>
+    <div class="fragment"><b>In our case it wasn't enough</b></div>
+</section>
+<section>
+    <h3>r.js problems</h3>
+    <div>
+    	Normal require.js files looks like following:<br/>
+    	<code>require(['a', 'b']);</code>
+    </div>
+    <div class="fragment">In our case it was like this:<br/>
+    	<code>require([Ebre.ModulePath+'a', Ebre.ModulePath+'b']);</code>
+    </div>
+    <div class="fragment">
+    	The variable <code>Ebre.ModulePath</code> was need because in the begging of the project UI was outsourced.
+    </div>
+</section>
+<section>
+    <h3>Grunt to the rescue</h3>
+    <div>
+    	<img width="10%" height="10%" src="http://gruntjs.com/img/grunt-logo.png"/>
+        <br/>The JavaScript Task Runner
+    </div>
+</section>
+<section>
+    <h3>Grunt "algorithm"</h3>
+    <ol>
+    	<li >Copy all require.js files to temp dir</li>
+    	<li>Replace <code>Ebre.DesktopModulePath+'a'</code> with <code>/MyDesktop/Resources/par_axd/MyDesktop?file=Scripts/Desktop/a</code></li>
+    	<li>Run r.js</li>
+    	<li>Copy result</li>
+    	<li>Delete temp dir</li>
+    </ol>
+</section>
+<section>
+    <h3>Grunt code</h3>
+    <h2>TODO</h2>
+</section>
+<section>
+    <h3>Integration with MSBuild - prebuild tasks</h3>
+    <ul>
+    	<li class="fragment">Run grunt - the easiest way was to run it from PowerShell</li>
+    	<li class="fragment">Calculate hash of JS/CSS for user caching and generate C# code with it</li>
+    	<li class="fragment">Include built file as embedded resource in final dll</li>
+    </ul>
+</section>
+<section>
+    <h3>C# part</h3>
+    <h2>TODO</h2>
+</section>
+<section>
+    <h3>Summary</h3>
+    <ul>
+    	<li class="fragment">Bundling, minification and compression is need modern apps</li>
+    	<li class="fragment">
+    		Don't be afraid for using <b>strange</b> technologies 
+    		- they can save our time and are easy include in MSBuild
+    	</li>
+    	<li class="fragment">
+    		Did we succeed? Let's check: <a href="https://online.mbank.pl/pl/Login">https://online.mbank.pl/pl/Login</a>
+    	</li>
+    	
+    </ul>
+</section>
