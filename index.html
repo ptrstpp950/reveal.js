@@ -222,6 +222,11 @@
 					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
+            Reveal.addEventListener( 'nmbProfiler', function() {
+                // TODO: Sprinkle magic
+                var xx = new nmbNetwork();
+                xx.start();
+            }, false );
 
 		</script>
 
@@ -292,5 +297,12 @@
 			$('a:not(:visible)').attr('tabindex', -1);
 		});
         </script>
+        <script src="modules/profiling/js/joint/smil.user.js"></script>
+        <script src="modules/profiling/js/joint/joint.js"></script>
+        <script src="modules/profiling/js/joint/joint.shapes.pn.js"></script>
+        <script src="modules/profiling/js/joint/joint.shapes.org.js"></script>
+        <script src="modules/profiling/js/joint/joint.shapes.uml.js"></script>
+        <script src="modules/profiling/js/joint/joint.shapes.erd.js"></script>
+        <script src="modules/profiling/js/joint/pn.js"></script>
     </body>
 </html>
