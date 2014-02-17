@@ -12,4 +12,4 @@ if($path -eq $null)
     throw "No IIS express installed";
 }
 Start-Process "http://localhost:9090"
-& "$path\iisexpress.exe" /path:E:\projects\about.mbank /port:9090
+& "$path\iisexpress.exe" /path:"$pwd" /port:9090
