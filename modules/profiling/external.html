@@ -6,10 +6,84 @@
 	</p>
 </section>
 <section data-state="nmbProfiler">
-	<h3>Architecture - 1000 words</h3>
+	<h3>NmB architecture in 1000 words</h3>
     <link rel="stylesheet" href="modules/profiling/css/joint.css" />
     <div id="paper"></div>
 </section>
 <section>
-	<h2>Placeholder #2</h2>
+	<h3>So where is the problem?</h3>
+	<ul>
+		<li class="fragment">MVC operations</li>
+		<li class="fragment">AppSrv operations</li>
+		<li class="fragment"><i>Database</i> operations</li>
+		<li class="fragment">Security checks</li>
+		<li class="fragment"><i>External</i> systems</li>
+	</ul>
+</section>
+<section>
+	<h3>Distributed Tracing systems</h3>
+	<ul>
+		<li>Google Dapper</li>
+		<li>Zipkin from Twitter</li>
+	</ul>
+</section>
+<section>
+	<h3>Dapper 3 design goals</h3>
+	<ul>
+		<li>Low overhead</li>
+		<li>Application-level transparency</li>
+		<li>Scalability</li>
+	</ul>
+	<p class="fragment">Used in every Google product and layer</p>
+</section>
+<section>
+	<h3>Zipkin</h3>
+	<ul>
+		<li>Created and used by Twitter</li>
+		<li>Based on Google Dapper</li>
+		<li>Open source :)</li>
+	</ul>
+	<div class="fragment"><br/>Prepared for Unix/Java based systems :( </div>
+</section>
+<section>
+	<h3>The solution - NmbProfiler</h3>
+	<ul>
+		<li>Based on MiniProfiler</li>
+		<li>Had a lot <i>stuff</i> included</li>
+		<li>In MVC level we used it out-of-box</li>
+		<li>Allow to profile every single step of code</li>
+	</ul>
+</section>
+<section>
+	<h3>Our extensions</h3>
+	<ul>
+		<li>Sampling - not every request is profiled</li>
+		<li>GUI</li>
+		<li>WCF request opaque (BeforeCall+AfterCall)</li>
+		<li>Saved in DB for later analysis</li> 
+		<li>Used in every layer and allow tracing full request</li>
+		<li>Out-of-box for every developer - no single line is needed</li>
+	</ul>
+</section>
+<section>
+	<h3>Simple code</h3>
+	<img src="modules/profiling/img/nmbprofier-code.png"/>
+</section>
+<section>
+	<h3>1000 words</h3>
+	<img src="modules/profiling/img/miniprofiler.png"/>
+</section>
+<section>
+	<h3>1000 words - GUI</h3>
+	<p>TODO</p>
+</section>
+
+<section>
+	<h3>Why should I use it?</h3>
+	<ul>
+		<li>MVC profiling -> easy optimizations</li>
+		<li>Database profiling-> ADO.NET, EF, Linq-To-SQL, RavenDB, ...</li>
+		<li>Many technologies-> .NET, Ruby, Node.js and Go</li>
+		<li>Basic use is few lines of code</li>
+	</ul>
 </section>
