@@ -1,4 +1,4 @@
- <section>
+﻿ <section>
     <h2>Minification and compression</h2>
     <h3>using <strong>Combres</strong> and <strong>Node.js</strong></h3>
 </section>
@@ -97,11 +97,23 @@
     </div>
 </section>
 <section>
-    <h3>Grunt to the rescue</h3>
-    <div>
-    	<img width="10%" height="10%" src="http://gruntjs.com/img/grunt-logo.png"/>
-        <br/>The JavaScript Task Runner
-    </div>
+    <h3>Node.js and Grunt to the rescue</h3>
+    <table style="width:100%">
+		<tr>
+			<td style="text-align: center; width:48%">
+				<img src="modules/combresAndNodejs/img/nodejs-logo.png"/>
+			</td>
+			<td></td>
+			<td style="text-align: center; width:48%">
+				<img src="modules/combresAndNodejs/img/grunt-logo.png"/>
+			</td>
+		</tr>
+		<tr>
+			<td style="text-align: center;">Chrome's JavaScript runtime</td>
+			<td></td>
+			<td style="text-align: center;">The JavaScript Task Runner</td>
+		</tr>
+    </table>
 </section>
 <section>
     <h3>Grunt "algorithm"</h3>
@@ -115,7 +127,20 @@
 </section>
 <section>
     <h3>Grunt code</h3>
-    <h2>TODO</h2>
+    <h2 class="fragment fade-out"><pre>Loading ...</pre></h2>
+	<div class="fragment" style="text-align: left;">
+		<p>
+			The code is too long for beginners and too simple for node.js guru developers - I will skip it :)
+			</br>
+		</p>
+		<p class="fragment">
+			<b>But why such "strange" technologies?</b>
+			<p class="fragment">
+				Because we need use node.js to run <code>r.js</code> during compilation, so Grunt was the best choice.
+			</p>
+		</p>
+		
+	</div>
 </section>
 <section>
     <h3>Integration with MSBuild - prebuild tasks</h3>
@@ -132,14 +157,40 @@
 <section>
     <h3>Summary</h3>
     <ul>
-    	<li class="fragment">Bundling, minification and compression is need modern apps</li>
-    	<li class="fragment">
+    	<li>Bundling, minification and compression is need modern apps</li>
+    	<li>
     		Don't be afraid for using <b>strange</b> technologies 
     		- they can save our time and are easy include in MSBuild
     	</li>
-    	<li class="fragment">
-    		Did we succeed? Let's check: <a href="https://online.mbank.pl/pl/Login">https://online.mbank.pl/pl/Login</a>
+    	<li>
+    		Did we succeed? Let's check: <a href="https://online.mbank.pl/pl/Login">https://online.mbank.pl/pl/Login</a> or <a href="modules/combresAndNodejs/yslow.html" target="_blank">Offline version</a>
     	</li>
-    	
+		<li class="fragment">
+			Bundling can gives us also a small <b>bonus</b>: simple way to discover that client doesn't have all resources
+		</li>
     </ul>
+</section>
+<section data-state="nmbError">
+	<h3>All resources load check</h3>
+	<ol>
+		<li class="fragment">
+			<div>Example HTML <code>div</code> with <u>inline</u> styles:</div>
+			<code><pre>&lt;div id=&quot;noresources&quot; class=&quot;nocss&quot; 
+style=&quot;position: absolute; top: 0; 
+right: 0; bottom: 0; left: 0; z-index: 100000&quot;&gt;</pre>
+			</code>
+		</li>
+		<li class="fragment">
+			<div>Example CSS class in the end of bundled styles:</div>
+			<code><pre>.nocss { display:none}</pre></code>
+		</li>
+		<li class="fragment">
+			<div>And example <u>inline</u> JavaScript:</div>
+			<code><pre>window.onload = function () {
+	if (!window.jQuery || !window.Backbone)
+		document.getElementById("noresources").className = "";
+};</pre>
+			</code>
+	</li>
+	</ol>
 </section>
