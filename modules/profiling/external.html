@@ -38,12 +38,23 @@
 </section>
 <section>
 	<h3>Zipkin</h3>
-	<ul>
-		<li>Created and used by Twitter</li>
-		<li>Based on Google Dapper</li>
-		<li>Open source :)</li>
-	</ul>
-	<div class="fragment"><br/>Prepared for Unix/Java based systems :( </div>
+	<table style="width:100%" >
+		<tr>
+			<td style="width:45%">
+				<ul>
+					<li>Created and used by Twitter</li>
+					<li>Based on Google Dapper</li>
+					<li>Open source :)</li>
+				</ul>
+			</td>
+			<td style="width:50%">
+				<a href="modules/profiling/img/zipkin.png" target="_blank">
+					<img style="width:100%" src="modules/profiling/img/zipkin.png"/>
+				</a>
+			</td>
+		</tr>
+	</table>
+	<div class="fragment"><br/>Prepared for <b>Unix/Java</b> based systems :( </div>
 </section>
 <section>
 	<h3>The solution - NmbProfiler</h3>
@@ -55,14 +66,24 @@
 	</ul>
 </section>
 <section>
+	<h3>MiniProfiler - all <i>stuff</i></h3>
+	<ul>
+		<li>MVC profiling -> easy optimizations</li>
+		<li>Database profiling-> ADO.NET, EF, Linq-To-SQL, RavenDB and more</li>
+		<li>Many technologies-> .NET, Ruby, Node.js and Go</li>
+		<li>Basic usage is only few lines of code</li>
+		<li>GUI is optional :) </li>
+	</ul>
+</section>
+<section>
 	<h3>Our extensions</h3>
 	<ul>
 		<li>Sampling - not every request is profiled</li>
-		<li>GUI</li>
+		<li>GUI for our needs</li>
 		<li>WCF request opaque (BeforeCall+AfterCall)</li>
 		<li>Saved in DB for later analysis</li> 
 		<li>Used in every layer and allow tracing full request</li>
-		<li>Out-of-box for every developer - no single line is needed</li>
+		<li>Out-of-box for every developer in the project - no single line is needed</li>
 	</ul>
 </section>
 <section>
@@ -74,20 +95,11 @@
 	<img src="modules/profiling/img/miniprofiler.png"/>
 </section>
 <section data-state="nmbProfilerdemo">
-	<h3>5*1000 words - GUI</h3>
+	<h3>6*1000 words or more - GUI</h3>
 	<!--START Juicebox EMBED.-->
 	<div id="juicebox-nmbprofler-container"></div>
 	<!-- END Juicebox EMBED -->
 	<a href="http://localhost:9091/" target="_blank">Demo online</a>
 </section>
 
-<section>
-	<h3>Summary - what can I do myself</h3>
-	<ul>
-		<li>MVC profiling -> easy optimizations</li>
-		<li>Database profiling-> ADO.NET, EF, Linq-To-SQL, RavenDB, ...</li>
-		<li>Many technologies-> .NET, Ruby, Node.js and Go</li>
-		<li>Basic use is few lines of code</li>
-		<li>GUI is optional :) </li>
-	</ul>
-</section>
+
