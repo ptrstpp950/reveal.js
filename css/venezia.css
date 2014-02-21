@@ -1,3 +1,6 @@
+#jb-glry-dlg{
+	z-index:100;
+}
 input[type=text]::-ms-clear {
 display:none;
 width:0;

@@ -166,6 +166,16 @@
             </div>
 
         </header>
+		<div id="noresources" class="nocss" style="position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-color: white; z-index: 100000">
+			<div style=" position: absolute;top: 50%;left: 50%;margin-top: -100px;margin-left: -300px;width: 600px;height: 200px; background-color: white; z-index: 100000; line-height: 30px;">
+				<a href="http://www.mbank.pl/" title="mBank"><img src="css/Content/gfx/logo_nmb.gif" alt="mBank"></a>
+				<p>Nastąpił bład podczas pobierania zasobów mBanku. Mogły one zostać zablokowane przez firewall, proxy albo konfigurację przeglądarki.  
+				Naciśnij Ctrl+F5 lub Ctrl+Shift+F5 by spróbować jeszcze raz</p>
+				
+				<p><b style="font-weight:bold;">Albo naciśnij dowolny klawisz. W końcu to prezentacja a nie system transakcyjny ;)</b></p>
+				
+			</div>
+		</div>
 		<div class="reveal">
 
 			<!-- Any section element inside of this container is displayed as a slide -->
@@ -195,6 +205,7 @@
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
+		<script src="js/jquery-2.0.3.min.js"></script>
 
 		<script>
 
@@ -227,10 +238,37 @@
                 var xx = new nmbNetwork();
                 xx.start();
             }, false );
+			
+			Reveal.addEventListener( 'nmbError', function() {
+                // TODO: Sprinkle magic
+                document.getElementById("noresources").className = "";
+				/*$(document).keyup(function (e) {
+					document.getElementById("noresources").className = "nocss";
+				});*/
+				$(document).on('keydown.nmberror', function() { 
+					$('#noresources').addClass("nocss");
+					$(document).off('keydown.nmberror');
+				});
+            }, false );
+			Reveal.addEventListener( 'nmbProfilerdemo', function() {
+                new juicebox({
+			    	backgroundColor:'rgba(0,0,0,.9)',
+			    	xbackgroundColor:'fff',
+			    	containerid:'juicebox-nmbprofler-container',
+			    	galleryHeight:'50%',
+			    	galleryWidth:'100%',
+			    	themeUrl:'modules/profiling/nmbprofiler/jbcore/classic/theme.css',
+			    	baseURL:'modules/profiling/nmbprofiler/'
+			    });
+            }, false );
+			
+			$(function () {
+				
+			});
 
 		</script>
 
-        <script src="js/jquery-2.0.3.min.js"></script>
+        
         <script>
 		$(function () {
 			//click handler on small sub links
@@ -304,5 +342,11 @@
         <script src="modules/profiling/js/joint/joint.shapes.uml.js"></script>
         <script src="modules/profiling/js/joint/joint.shapes.erd.js"></script>
         <script src="modules/profiling/js/joint/pn.js"></script>
+		
+		<script src="modules/profiling/nmbprofiler/jbcore/juicebox.js"></script>
+    	
+	    <script type="text/javascript">
+		    
+	    </script>
     </body>
 </html>
