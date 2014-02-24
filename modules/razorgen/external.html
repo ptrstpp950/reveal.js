@@ -1,0 +1,55 @@
+<section>
+	<h2><strong>Razor Generator</strong></h2>
+	<h3>in multi-tier architecture</h3>
+</section>
+<section>
+	<h3>Environment</h3>
+	<ul>
+		<li>Modules have their own UIs</li>
+		<li>There are nonSPA pieces integrated into SPA experience</li>
+		<li>UI component libraries</li>
+		<li>Portable areas (non MVC contrib) in different projects</li>
+	</ul>
+</section>
+<section>
+	<h3>Razor Generator</h3>
+	<ul>
+		<li>Custom build tool</li>
+		<li>Generates cs files for views, layouts</li>
+		<li>Easy to register</li>
+		<li>Turns views into code, allowing to deploy classes compiled to assemblies only</li>
+	</ul>
+</section>
+<section>
+	<h3>How to (1):</h3>
+	<ul>
+		<li>Add RazorGenerator.MsBuild package</li>
+		<li>Define what will be compiled</li>
+		<code class="xml">
+			&lt;ItemGroup&gt; <br/>
+            &lt;RazorSrcFiles Include=&quot;Views\**\*.cshtml&quot; /&gt;<br/>
+			&lt;/ItemGroup&gt;
+		</code>
+		<li>Build</li>
+	</ul>
+</section>
+<section>
+	<h3>How to (2):</h3>
+	<ul>
+		<li>In another lib, add package RazorGenerator.Mvc</li>
+		<li>and register usage.</li>
+		<code>
+		var engine = new PrecompiledMvcEngine(typeof(PreApplicationStartCode).Assembly);
+		ViewEngines.Engines.Add(engine);
+		VirtualPathFactoryManager.RegisterVirtualPathFactory(engine);
+		</code>
+	</ul>
+</section>
+<section>
+	<h3>Advantages</h3>
+	<ul>
+		<li>Turns views into code, allowing to deploy classes compiled to assemblies only</li>
+		<li>Let's make component projects!</li>
+		<li>Compiled artifacts - app's getting warm faster</li>
+	</ul>
+</section>
