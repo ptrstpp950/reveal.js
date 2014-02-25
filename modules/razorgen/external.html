@@ -41,9 +41,12 @@
 		<li>In another lib, add package RazorGenerator.Mvc</li>
 		<li>and register usage.</li>
 		<code>
-		var engine = new PrecompiledMvcEngine(typeof(PreApplicationStartCode).Assembly);
+        <pre  class="brush: csharp;">
+		var engine = new PrecompiledMvcEngine(
+            typeof(PreApplicationStartCode).Assembly);
 		ViewEngines.Engines.Add(engine);
 		VirtualPathFactoryManager.RegisterVirtualPathFactory(engine);
+        </pre>
 		</code>
 	</ul>
 </section>
