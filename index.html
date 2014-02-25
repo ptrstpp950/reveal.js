@@ -23,6 +23,7 @@
         <link rel="stylesheet" type="text/css" href="css/venezia.css">
         
         <link type="text/css" rel="stylesheet" href="css/shCoreDefault.css"/>
+        <link type="text/css" rel="stylesheet" href="css/shThemeRDark.css"/>
         <style>
         .syntaxhighlighter {
           width: 100% !important;
@@ -372,9 +373,10 @@
         <script type="text/javascript" src="js/scripts/shBrushCss.js"></script>
         <script type="text/javascript" src="js/scripts/shBrushXml.js"></script>
         
-        <script type="text/javascript">SyntaxHighlighter.all();</script>
-	    <script type="text/javascript">
-		    
-	    </script>
+        <script type="text/javascript">
+            SyntaxHighlighter.defaults['gutter'] = false;
+            SyntaxHighlighter.all();
+        </script>
+	    
     </body>
 </html>
