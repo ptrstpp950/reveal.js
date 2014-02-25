@@ -160,7 +160,21 @@
 </section>
 <section>
     <h3>C# part</h3>
-    <h2>TODO</h2>
+    <code>
+    <pre class="width:100%;brush: c-sharp;">public sealed class PortableAreaHandler : IHttpHandler{
+    [...]
+    public void ProcessRequest(HttpContext context){
+        //Check ETag
+        //If match 
+            //send 304 response
+        //If not match 
+            //get resource from dll embeded resource 
+            //do minification
+            //send back to client
+        
+    }
+}</pre>
+    </code>
 </section>
 <section>
     <h3>Summary</h3>
@@ -183,18 +197,18 @@
 	<ol>
 		<li class="fragment">
 			<div>Example HTML <code>div</code> with <u>inline</u> styles:</div>
-			<code><pre>&lt;div id=&quot;noresources&quot; class=&quot;nocss&quot; 
+			<code><pre class="brush: css;">&lt;div id=&quot;noresources&quot; class=&quot;nocss&quot; 
 style=&quot;position: absolute; top: 0; 
 right: 0; bottom: 0; left: 0; z-index: 100000&quot;&gt;</pre>
 			</code>
 		</li>
 		<li class="fragment">
 			<div>Example CSS class in the end of bundled styles:</div>
-			<code><pre>.nocss { display:none}</pre></code>
+			<code><pre class="brush: css;">.nocss { display:none}</pre></code>
 		</li>
 		<li class="fragment">
 			<div>And example <u>inline</u> JavaScript:</div>
-			<code><pre>window.onload = function () {
+			<code><pre class="brush: js;">window.onload = function () {
 	if (!window.jQuery || !window.Backbone)
 		document.getElementById("noresources").className = "";
 };</pre>
