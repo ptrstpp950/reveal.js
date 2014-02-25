@@ -31,17 +31,6 @@
 	</ul>
 </section>
 <section>
-	<p>How modules are managed</p>
-	<ul>
-		<li class="fragment"><span>when you define modules in RequireJs, you define nothing else than a simple <strong>dictionary</strong>!</span></li>
-		<li class="fragment"><span>the Keys are string</span></li>
-		<li class="fragment"><span>the Values are <em>anything</em></span></li>
-		<!--
-		<li class="fragment"><span>during development the keys are generally paths, but this is "collateral"</span></li>
-		-->
-	</ul>
-</section>
-<section>
 	<p>During development the modules are organized in separate files using <strong>define</strong> function</p>
 	<ul>
 		<li class="fragment">
@@ -82,6 +71,14 @@
 	};
 });</code></pre>
 		</li>
+	</ul>
+</section>
+<section>
+	<p>How modules are managed</p>
+	<ul>
+		<li class="fragment"><span>when you define modules in RequireJs, you define nothing else than a simple <strong>dictionary</strong>!</span></li>
+		<li class="fragment"><span>the Keys are string</span></li>
+		<li class="fragment"><span>the Values are <em>anything</em></span></li>
 	</ul>
 </section>
 <section>
@@ -200,9 +197,49 @@
 		<li class="fragment"><span>Scripts are evaluated by browser every single time a page is loaded, so it makes sense to not create a single huge file</span></li>
 	</ul>
 </section>
-
-<!--
-	1. Single Responsibility Principle
-	AngularJs
-
-	-->
+<section>
+	<p>Best practices when organizing modules</p>
+	<ul>
+		<li class="fragment"><span>Organize properly the files in subfolders, separate them by conceptual area and purpose, then by category</span></li>
+		<li class="fragment">
+			<pre><code>
+				./scripts/areas
+					./public
+						./home
+							./views
+							./models
+							./templates
+					./admin
+						./home
+							./views
+							./models
+							./templates
+					[...]
+			</code></pre>
+		</li>
+	</ul>
+</section>
+<section>
+	<p>Best practices when organizing modules</p>
+	<ul>
+		<li class="fragment"><span>Follow the <strong>Single Responsibility Principle</strong></span></li>
+		<li class="fragment"><span>Every object should have a single responsibility, and that responsibility should be entirely encapsulated by the object</span></li>
+		<li class="fragment"><span>Be extremely careful about objects passed by reference, knowing that a RequireJs module, once defined, keeps always the same value</span></li>
+	</ul>
+</section>
+<section>
+	<p>RequireJs &amp; Backbone</p>
+	<ul>
+		<li class="fragment"><span>They are a nice couple!</span></li>
+		<li class="fragment"><span>Use the extend function offered by every Backbone object to define instantiable objects for RequireJs modules</span></li>
+		<li class="fragment">
+			<pre><code>
+	define(['!text/scripts/templates/home.html'], function (Template) {
+		return Backbone.Marionette.ItemView.extend({
+			template: Template
+		});
+	})
+			</code></pre>
+		</li>
+	</ul>
+</section>
