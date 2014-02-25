@@ -9702,3 +9702,26 @@ display:none
 #main-nav ul.second-level li a:focus {
 	color: #fff;
 }
+#marionette-logo {
+	vertical-align: middle;
+	border: none;
+}
+#mvc-schema {
+	border: none;
+}
+#grumpy-cat {
+	vertical-align: middle;
+	border: none;
+}
+em {
+	color: #000;
+}
+.reveal .slides > section, .reveal .slides > section > section {
+	padding-top: 0px;
+}
+#requirejs-start {
+	margin-top: 0px;
+}
+.reveal ol, .reveal ul {
+	display: block;
+}

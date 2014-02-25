@@ -1,12 +1,245 @@
 <section>
 	<h2>Working with <strong>Require.js</strong></h2>
-	<p>
-			...
-	</p>
+	<p>RequireJs is a JavaScript file and module loader</p>
 </section>
 <section>
-	<h2>Placeholder #1</h2>
+	<h2>RequireJS...</h2>
+	<ul>
+		<li class="fragment"><span>represents a tool to organize the JavaScript code into modules</span></li>
+		<li class="fragment"><span>in conjunction to RequireJs Text Plugin, it allows to organize <em>also</em> HTML fragments in a similar way</span></li>
+		<li class="fragment"><span>it improves the quality of code during development and in production environment as well</span></li>
+	</ul>
 </section>
 <section>
-	<h2>Placeholder #2</h2>
+	<p>The RequireJs official documentation can be discouraging</p>
+	<ul>
+		<li class="fragment"><span>honestly, it's quite "meh"...&nbsp;</span><img id="grumpy-cat" src="./modules/requirejs/images/grumpy.jpg" alt="Grumpy Cat" width="300" height="228" /></li>
+		<li class="fragment"><span>first, it starts by speaking about jQuery integration.<br />But hey, I came here to read about RequireJs!</span></li>
+		<li class="fragment"><span>second, it focuses immediately on advanced stuff like the <strong>optimization tool</strong>, without explaining first <em>how to use it</em> in a practical way</span></li>
+	</ul>
+</section>
+<section>
+	<img id="requirejs-start" src="./modules/requirejs/images/requirejs-start-chapter.png" alt="RequireJs Start Chapter" />
+</section>
+<section>
+	<p>The things I want to explain are:</p>
+	<ul>
+		<li class="fragment"><span>how modules are managed?</span></li>
+		<li class="fragment"><span>how modules are loaded?</span></li>
+		<li class="fragment"><span>how scripts are loaded?</span></li>
+		<li class="fragment"><span>how scripts are evaluated?</span></li>
+	</ul>
+</section>
+<section>
+	<p>During development the modules are organized in separate files using <strong>define</strong> function</p>
+	<ul>
+		<li class="fragment">
+			<pre><code>
+				define([], function () {
+					return function (x, y) {
+						this.X = x;
+						this.Y = y;
+					};
+				});
+			</code></pre>
+		</li>
+		<li class="fragment"><span>The first argument is the array of dependencies, while the second argument is the callback function to execute when all dependencies are ready. The function return value represents the Module itself.</span></li>
+	</ul>
+</section>
+<section>
+	<p>For instance...</p>
+	<ul>
+		<li class="fragment">
+			<span>./scripts/geometry/point.js</span><br />
+			<span>./scripts/geometry/rectangle.js</span>
+		</li>
+		<li class="fragment">
+			<pre><code>define([], function () {
+	//defines an instantiable Point object
+	return function (x, y) {
+		this.X = x;
+		this.Y = y;
+	};
+});</code></pre>
+		</li>
+		<li class="fragment">
+			<pre><code>define(['scripts/geometry/point.js'], function (Point) {
+	//defines an instantiable Rectangle object
+	return function (x1, y1, x2, y2) {
+		this.bottomLeft = new Point(x1, y1);
+		this.topRight = new Point(x2, y2);
+	};
+});</code></pre>
+		</li>
+	</ul>
+</section>
+<section>
+	<p>How modules are managed</p>
+	<ul>
+		<li class="fragment"><span>when you define modules in RequireJs, you define nothing else than a simple <strong>dictionary</strong>!</span></li>
+		<li class="fragment"><span>the Keys are string</span></li>
+		<li class="fragment"><span>the Values are <em>anything</em></span></li>
+	</ul>
+</section>
+<section>
+	<p>How modules are managed... 2</p>
+	<ul>
+		<li class="fragment"><span>You can <em>potentially</em> define modules manually by calling the <strong>define</strong> function with three arguments</span></li>
+		<li class="fragment">
+			<pre><code>
+				define('foo', [], function () {
+					return 5;
+				});
+
+				require(['foo'], function (a) {
+					//a is 5
+					console.log(a);
+				});
+				</code></pre>
+		</li>
+		<li class="fragment"><span>In this case, the first argument will be the string key which represents the "id" of that module</span></li>
+	</ul>
+</section>
+<section>
+	<p>When you require a module in RequireJs:</p>
+	<ul>
+		<li class="fragment"><span><strong>if no module was defined by a "define" call</strong>, a script element is created and injected inside the DOM to load the module: the required key is used as source path</span></li>
+		<li class="fragment"><span><strong>if the module was defined by a "define" call</strong>, the value is returned without creating any script element</span></li>
+		<li class="fragment"><span>This is the core concept about RequireJs optimization: the creation of a big file with all definitions preceding require calls, while during development files are loaded separately for convenience <em>and the keys are not explicitly defined</em></span></li>
+	</ul>
+</section>
+<section>
+	<pre><code>
+		define('foo', [], function () {
+			return 5;
+		});
+
+		require(['foo', 'whatever'], function (Foo, MyModule) {
+			//a script element with path = baseUrl + 'whatever.js' 
+			//will be created and injected inside the head element
+			
+			return;
+		});
+	</code></pre>
+	<ul>
+		<li class="fragment"><span>The script elements are created and injected only once per key</span></li>
+		<li class="fragment"><span>If the required script contains a "define" call, the callback function will be executed passing the returned value as argument</span></li>
+	</ul>
+</section>
+<section>
+	<p>How scripts are evaluated</p>
+	<pre><code>
+		define('foo', [], function () {
+			console.log('@@@ This code gets executed only once!');
+			return 5;
+		});
+
+		require(['foo'], function (Foo) {
+			return;
+		});
+	</code></pre>
+	<ul>
+		<li class="fragment"><span>Functions that define a module are only 'registered' to a key when the <strong>define</strong> function is called.</span></li>
+		<li class="fragment"><span>Attention! After execution, a module <em>will always have the same value</em></span></li>
+	</ul>
+</section>
+<section>
+	<p>In JavaScript primitive types such as integers and strings are passed by value whereas objects are passed by reference.</p>
+	<ul>
+		<li class="fragment">
+			<pre><code>
+				define('foo', [], function () {
+					return 5;
+				});
+
+				require(['foo'], function (Foo) {
+					Foo += 5;
+					console.log(Foo);//logs 10
+				});
+			</code></pre>
+		</li>
+		<li class="fragment">
+			<pre><code>
+				require(['foo'], function (Foo) {
+					console.log(Foo);// Foo is still 5 !!!
+				});
+			</code></pre>
+		</li>
+	</ul>
+</section>
+<section>
+	<ul>
+		<li class="">
+			<pre><code>
+				define('foo', [], function () {
+					return { x: 5 };
+				});
+
+				require(['foo'], function (Foo) {
+					Foo.x += 5;
+					console.log(Foo.x);//logs 10
+				});
+			</code></pre>
+		</li>
+		<li class="fragment">
+			<pre><code>
+				require(['foo'], function (Foo) {
+					console.log(Foo.x);// Foo.x is 10
+				});
+			</code></pre>
+		</li>
+	</ul>
+</section>
+<section>
+	<p>The download time is usually the biggest problem related to website performance, so reducing the amount of requests will significantly improve the speed of a website.</p>
+	<ul>
+		<li class="fragment"><span>But don't forget that also code evaluation can be time consuming, especially for slower devices</span></li>
+		<li class="fragment"><span>Scripts are evaluated by browser every single time a page is loaded, so it makes sense to not create a single huge file</span></li>
+	</ul>
+</section>
+<section>
+	<p>Best practices when organizing modules</p>
+	<ul>
+		<li class="fragment"><span>Organize properly the files in subfolders, separate them by conceptual area and purpose, then by category</span></li>
+		<li class="fragment">
+			<pre><code>
+				./scripts/areas
+					./public
+						./home
+							./views
+							./models
+							./templates
+					./admin
+						./home
+							./views
+							./models
+							./templates
+					[...]
+			</code></pre>
+		</li>
+	</ul>
+</section>
+<section>
+	<p>Best practices when organizing modules</p>
+	<ul>
+		<li class="fragment"><span>Follow the <strong>Single Responsibility Principle</strong></span></li>
+		<li class="fragment"><span>Every object should have a single responsibility, and that responsibility should be entirely encapsulated by the object</span></li>
+		<li class="fragment"><span>Be extremely careful about objects passed by reference, knowing that a RequireJs module, once defined, keeps always the same value</span></li>
+	</ul>
+</section>
+<section>
+	<p>RequireJs &amp; Backbone</p>
+	<ul>
+		<li class="fragment"><span>They are a nice couple!</span></li>
+		<li class="fragment"><span>Use the extend function offered by every Backbone object to define instantiable objects for RequireJs modules</span></li>
+		<li class="fragment">
+			<pre><code>
+	define(['!text/scripts/templates/home.html'], function (Template) {
+		return Backbone.Marionette.ItemView.extend({
+			template: Template
+		});
+	})
+			</code></pre>
+		</li>
+	</ul>
 </section>
