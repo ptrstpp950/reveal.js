@@ -1,0 +1,26 @@
+@import "smart-table.less";
+@import "pagination-bars.less";
+@import "menus.less";
+@import "live-search.less";
+
+body.midnight {
+	color:#c4feff;
+	background-color: #000;
+	
+	input, select {
+		background-color: #000;
+		border-color: #333;
+		color: #c4feff;
+	}
+	
+	input, select, [tabindex], [type="checkbox"] {
+		outline-color: #c4feff !important;
+	}
+	
+	/* bootstrap specific */
+	[class^="icon-"],
+	[class*=" icon-"] {
+		background-image: url("bootstrap/img/glyphicons-halflings.png");
+	}
+	
+}

@@ -1,0 +1,100 @@
+@theme: "./";
+
+body.dark {
+
+	.smart-table {
+		color: #DEDEDE;
+		background: #222;
+		border-collapse: collapse;
+		border-color: #666;
+		border: none;
+		font-family: Sans-Serif;
+		font-size: 12px;
+		line-height: 17px;
+		margin-bottom: 10px;
+		border-bottom: 1px solid #666;
+	}
+	
+	.smart-table caption {
+		border: 1px solid #d0d0d0;
+		font-weight: bold;
+		background: #373737 url("@{theme}table/caption-row-bg.jpg") top left repeat;
+	}
+	
+	.smart-table tr td.row-number {
+		width:40px;
+		text-align:center;
+	}
+	
+	.smart-table a {
+		color: #00becf;
+	}
+	.smart-table a:hover {
+		color: #FFF;
+	}
+	
+	.smart-table .smart-table-row, .smart-table .smart-table-headrow {
+		width: 100%;
+		border-color: #666;
+	}
+	
+	.smart-table .smart-table-headrow .order-desc {
+		background-image: url("@{theme}images/ui-icons_FFFFFF_256x240.png");
+	}
+	
+	.smart-table .smart-table-headrow .order-asc {
+		background-image: url("@{theme}images/ui-icons_FFFFFF_256x240.png");
+	}
+	
+	.smart-table-row.ui-even {
+		/*border-top:1px solid transparent;*/
+	}
+	.smart-table-row.ui-odd {
+		/*border-top:1px solid transparent;*/ /*background-color: #ccc;*/
+	}
+	.smart-table-row-hover.ui-even, .smart-table-row-hover.ui-odd {
+		background-color: #111;
+		/*  font-weight: bold;     border-top: 1px dotted #f00;     border-bottom: 1px dotted #f00;     */
+	}
+	.smart-table .smart-table-headrow {
+		background: #373737 url("@{theme}table/caption-row-bg.jpg") top left repeat-x;
+	}
+	.smart-table .smart-table-headrow {
+		height: 18px;
+	}
+	.smart-table tr th {
+		text-align: left;
+		border: 1px solid #666;
+		border-top: 1px solid #d6d6d6;
+	}
+	.smart-table tr td {
+		word-break: break-all;
+		line-height: 15px;
+		border-right: 1px solid #444;
+		border-bottom: 1px solid #444;
+	}
+	.smart-table tr td.row-number {
+		border: 1px solid #666;
+		border-top: 1px solid #d6d6d6;
+		background: #373737 url("@{theme}table/caption-row-bg.jpg") top left repeat-x;
+	}
+	.smart-table-go-to-btn {
+		width: 32px;
+		height: 18px;
+		display: inline-block;
+		background-repeat: no-repeat;
+		background-image: url("@{theme}table/edit-icon.png");
+		background-position: 8px 3px;
+		cursor: pointer;
+	}
+	.smart-table-headcell .smart-column-options {
+		background-image: url("@{theme}images/ui-icons_cccccc_256x240.png");
+	}
+	.smart-table-headcell .smart-column-options-hover {
+		background-image: url("@{theme}images/ui-icons_888888_256x240.png");
+	}
+	
+	.smart-table-headcell .smart-column-options {
+		background-image: url("@{theme}images/ui-icons_cccccc_256x240.png");
+	}
+}
