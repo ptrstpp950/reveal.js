@@ -108,6 +108,13 @@
 .syntaxhighlighter .color2, .syntaxhighlighter .color2 a {
   color: white !important;
 }
+.syntaxhighlighter .colorGreen, .syntaxhighlighter .color2 a {
+  color: green !important;
+}
+.syntaxhighlighter .colorRed, .syntaxhighlighter .color2 a {
+  color: red !important;
+}
+
 .syntaxhighlighter .color3, .syntaxhighlighter .color3 a {
   color: #ffaa3e !important;
 }

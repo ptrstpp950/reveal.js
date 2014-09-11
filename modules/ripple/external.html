@@ -33,6 +33,7 @@
 		<li>Two kinds of dependencies: float / fixed</li>
 		<li>Dependencies extracted to directories with no version!</li>
 		<li>Versions declared on the solution ripple.config file level</li>
+		<li>But still we use <b>NuGet packages</b></li>
 	</ul>
 </section>
 <section>
@@ -43,5 +44,38 @@
 		<li>Very well tested</li>
 		<li>Fun to work with</li>
 		<li>We did over 5% of commits ^_^</li>
+	</ul>
+</section>
+<section>
+	<h3>But what it really ripple change</h3>
+	<p>Csproj modification is easy:</p>
+	<code>
+        <pre class="brush: diff;">
+ &lt;ItemGroup&gt;
+    &lt;Reference Include=&quot;Autofac, Version=3.3.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL&quot;&gt;
+      &lt;SpecificVersion&gt;False&lt;/SpecificVersion&gt;
+---      &lt;HintPath&gt;..\packages\Autofac.3.3.1\lib\net40\Autofac.dll&lt;/HintPath&gt;
++++      &lt;HintPath&gt;..\packages\Autofac\lib\net40\Autofac.dll&lt;/HintPath&gt;
+    &lt;/Reference&gt;
+        </pre>
+	</code>
+	<p>Also <b>packages</b> folder is <i>more clear</i></p>
+	<p class="fragment" >But it has also a disadvantage: you <b>cannot</b> use more than one version of nuget package in one project</p>
+</section>
+<section>
+	<h3>But what it really ripple change c.d.</h3>
+	<ul>
+		<li>You have to force download dependecies</li>
+		<li>packages.config -> ripple.config in solution level and ripple.dependecies.config in project level</li>
+	</ul>
+</section>
+<section>
+	<h3>Why about Microsoft?</h3>
+	<ul>
+		<li>Ripple ideas are implmented in vNext</li>
+		<li>Project.json allows to specify versions with wildcards or empty for latest<br/>
+		<img id="grumpy-cat" src="./modules/ripple/img/packagejson.png" alt="packages.json" />
+		</li>
+		
 	</ul>
 </section>
